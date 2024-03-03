@@ -1,11 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <title>YourHypeStore</title>
 </head>
+
 <body>
-    
+    <section class="section_introduction">
+        <h1 class="heading_primary">Welcome to YourHypeStore !</h1>
+        <p class="product_catalogue_description">This is the full product catalogue! Have a look and enjoy shopping! :D
+        </p>
+        <div class="introduction_pointers">
+            <ul class="introduction_list">
+                <li class="introduction_list_items"><ion-icon name="checkmark-circle-outline"></ion-icon><span>100%
+                        Authentic</span></li>
+                <li class="introduction_list_items"><ion-icon name="checkmark-circle-outline"></ion-icon><span>Items are
+                        INSTOCK, no waiting time needed!</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section_filters">
+        <div class="form-group">
+            <label for="brand">Brand</label>
+            <select name="brand" id="brand">
+                <option value="all">ALL</option>
+                <option value="tommy_hilfiger">Tommy Hilfiger</option>
+                <option value="carhartt">Carhartt</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value="all">ALL</option>
+                <option value="tshirt">T-Shirt</option>
+                <option value="hat">Hat</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="section_clothes">
+        <div class="card">
+            <div><img class="brand_logo" src="pics/tommy_hilfiger/logo.png" alt="tommy hilfiger logo" /></div>
+            <h2 class="card_title">Small Logo T-Shirt</h2>
+            <div class="card_image_container">
+                <img class="card_image" src="pics/tommy_hilfiger/7849808_white.png" alt="7849808 white" />
+            </div>
+            <div class="card_details">
+                <p class="card_price">$35.00</p>
+                <p class="card_sizes">XS &#8226; S &#8226; M &#8226; L</p>
+            </div>
+        </div>
+        <div class="card">
+            <div><img class="brand_logo" src="pics/tommy_hilfiger/logo.png" alt="tommy hilfiger logo" /></div>
+            <h2 class="card_title">Small Logo T-Shirt</h2>
+            <div class="card_image_container">
+                <img class="card_image" src="pics/tommy_hilfiger/7849808_black.png" alt="7849808 black" />
+            </div>
+            <div class="card_details">
+                <p class="card_price">$35.00</p>
+                <p class="card_sizes">XS &#8226; S &#8226; M &#8226; L &#8226; XL</p>
+            </div>
+        </div>
+        <div class="card">
+            <div><img class="brand_logo" src="pics/tommy_hilfiger/logo.png" alt="tommy hilfiger logo" /></div>
+            <h2 class="card_title">Small Logo T-Shirt</h2>
+            <div class="card_image_container">
+                <img class="card_image" src="pics/tommy_hilfiger/7849808_navy.png" alt="7849808 white" />
+            </div>
+            <div class="card_details">
+                <p class="card_price">$35.00</p>
+                <p class="card_sizes">XS &#8226; S &#8226; M &#8226; L</p>
+            </div>
+        </div>
+        <div class="card">
+            <div><img class="brand_logo" src="pics/tommy_hilfiger/logo.png" alt="tommy hilfiger logo" /></div>
+            <h2 class="card_title">Small Logo T-Shirt</h2>
+            <div class="card_image_container">
+                <img class="card_image" src="pics/tommy_hilfiger/7849808_grey.png" alt="7849808 white" />
+            </div>
+            <div class="card_details">
+                <p class="card_price">$35.00</p>
+                <p class="card_sizes">XS &#8226; L</p>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>

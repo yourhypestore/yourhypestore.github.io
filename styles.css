@@ -1,0 +1,141 @@
+/* INTRODUCTION */
+.section_introduction {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
+    margin: 4.8rem 35rem;
+    padding: 2.4rem;
+    border-radius: 2.4rem;
+    background-color: #FAF8F2;
+}
+
+.section_introduction .heading_primary {
+    text-align: center;
+}
+
+.product_catalogue_description {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.introduction_list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    font-size: 1.6rem;
+}
+
+.introduction_list_items {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.introduction_list_items ion-icon {
+    color: limegreen;
+    font-size: 2.4rem;
+}
+
+/* SELECT */
+.section_filters {
+    display: flex;
+    gap: 2rem;
+    margin: 4.8rem 35rem;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #e1faff;
+    color: #333;
+    transition: border-color 0.3s;
+    border-color: #FAF8F2;
+    box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.02);
+    text-align: center;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+option {
+    font-size: 16px;
+}
+
+/* CARD */
+.section_clothes {
+    margin: 2.4rem 20rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+}
+
+.card {
+    box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
+    padding: 2.4rem;
+    border-radius: 1.4rem;
+}
+
+.brand_logo {
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.card_title {
+    margin-bottom: 1.4rem;
+}
+
+.card_image_container {
+    height: 17rem;
+    overflow: hidden;
+
+    margin-bottom: 1.4rem;
+}
+
+.card_image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.card_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.card_price {
+    font-size: 1.6rem;
+    color: #4f6c5b;
+    background-color: #C1F2B0;
+    padding: 1rem 1.4rem;
+    border-radius: 1.8rem;
+}
