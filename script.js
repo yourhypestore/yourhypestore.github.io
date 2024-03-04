@@ -1,53 +1,31 @@
+// constants
+const BRAND = 'brand';
+const CATEGORY = 'category';
+const ALL = 'all';
+
 document.addEventListener('DOMContentLoaded', function () {
-  const brandSelect = document.getElementById('brand');
-  const categorySelect = document.getElementById('category');
+  const brandSelect = document.getElementById(BRAND);
+  const categorySelect = document.getElementById(CATEGORY);
   const cards = document.querySelectorAll('.card');
 
   function filterCards() {
     const urlParams = new URLSearchParams(window.location.search);
-    let selectedBrand = urlParams.has('brand') ? urlParams.get('brand') : 'all';
-    let selectedCategory = urlParams.has('category')
-      ? urlParams.get('category')
-      : 'all';
+    let selectedBrand = urlParams.has(BRAND) ? urlParams.get(BRAND) : ALL;
+    let selectedCategory = urlParams.has(CATEGORY)
+      ? urlParams.get(CATEGORY)
+      : ALL;
 
-    console.log('urlParams', urlParams.get('brand'), urlParams.get('category'));
-
-    // Check if user has made a selection in the dropdown, if yes, update selected values
-    if (brandSelect.value !== 'all') {
-      selectedBrand = brandSelect.value;
-      urlParams.set('brand', selectedBrand);
-    } else {
-      selectedBrand = 'all'; // Set brand to 'all' even if 'all' is selected from the dropdown
-      urlParams.set('brand', 'all');
-    }
-
-    if (categorySelect.value !== 'all') {
-      selectedCategory = categorySelect.value;
-      urlParams.set('category', selectedCategory);
-    } else {
-      selectedCategory = 'all'; // Set category to 'all' even if 'all' is selected from the dropdown
-      urlParams.set('category', 'all');
-    }
-
-    // Update URL with the new parameters
-    const newUrl = `${location.pathname}${
-      urlParams.toString() ? '?' : ''
-    }${urlParams.toString()}`;
-
-    console.log('newUrl', newUrl);
-
-    history.pushState({}, '', newUrl);
-
+    // Update select elements based on URL parameters
     brandSelect.value = selectedBrand;
     categorySelect.value = selectedCategory;
 
     cards.forEach((card) => {
       const brand =
         card.getAttribute('data-brand') === selectedBrand ||
-        selectedBrand === 'all';
+        selectedBrand === ALL;
       const category =
         card.getAttribute('data-category') === selectedCategory ||
-        selectedCategory === 'all';
+        selectedCategory === ALL;
 
       if (brand && category) {
         card.style.display = ''; // Show the card
@@ -56,9 +34,28 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
-  brandSelect.addEventListener('change', filterCards);
-  categorySelect.addEventListener('change', filterCards);
 
-  // Call initially to apply filters based on query params
-  filterCards();
+  brandSelect.addEventListener('change', function () {
+    const selectedBrand = brandSelect.value;
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set(BRAND, selectedBrand);
+    const newUrl = `${location.pathname}${
+      urlParams.toString() ? '?' : ''
+    }${urlParams.toString()}`;
+    history.pushState({}, '', newUrl);
+    filterCards();
+  });
+
+  categorySelect.addEventListener('change', function () {
+    const selectedCategory = categorySelect.value;
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set(CATEGORY, selectedCategory);
+    const newUrl = `${location.pathname}${
+      urlParams.toString() ? '?' : ''
+    }${urlParams.toString()}`;
+    history.pushState({}, '', newUrl);
+    filterCards();
+  });
+
+  filterCards(); // Call initially to apply filters based on query params
 });
