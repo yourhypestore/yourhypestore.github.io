@@ -22,3 +22,8 @@ git push -u origin main
 ## Adding git-credential-osxkeychain
 
 - [YouTube Link](https://www.youtube.com/watch?v=qQNXe-fP_Ek)
+
+## TODO
+
+- Find Tommy Jeans Logo
+- Separate Tommy Jeans into its own folder for pictures

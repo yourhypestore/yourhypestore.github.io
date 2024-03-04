@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
       ? urlParams.get('category')
       : 'all';
 
+    console.log('urlParams', urlParams.get('brand'), urlParams.get('category'));
+
     // Check if user has made a selection in the dropdown, if yes, update selected values
     if (brandSelect.value !== 'all') {
       selectedBrand = brandSelect.value;
@@ -31,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const newUrl = `${location.pathname}${
       urlParams.toString() ? '?' : ''
     }${urlParams.toString()}`;
+
+    console.log('newUrl', newUrl);
 
     history.pushState({}, '', newUrl);
 
